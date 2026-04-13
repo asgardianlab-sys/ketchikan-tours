@@ -15,9 +15,10 @@ export default function Home() {
       <section className="relative h-[80vh] flex items-center justify-center bg-raven overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-60">
           <Image 
-            src="https://images.unsplash.com/photo-1549420067-e6a88ab05cde?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
+            src="/hero_landscape.png" 
             alt="Ketchikan Alaska Landscape" 
             fill 
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -87,9 +88,9 @@ export default function Home() {
             {tours.map(tour => (
               <div key={tour.slug} className="bg-glacier rounded-2xl shadow-lg border border-golden/20 overflow-hidden transition-transform duration-300 hover:-translate-y-2 flex flex-col h-full border hover:border-copper/50">
                 <div className="relative h-72">
-                  <Image src={tour.featuredImage} alt={tour.title} fill className="object-cover" />
+                  <Image src={tour.featuredImage} alt={tour.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute top-4 right-4 bg-raven/90 backdrop-blur text-golden font-bold px-4 py-2 rounded-lg shadow-sm border border-golden/30">
-                    ${tour.price} <span className="text-sm font-normal text-glacier">/ person</span>
+                    <span className="text-sm font-normal text-glacier pr-1">From</span>${tour.price.toFixed(2)} <span className="text-sm font-normal text-glacier">/ adult</span>
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-grow">

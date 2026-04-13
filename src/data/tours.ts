@@ -6,7 +6,7 @@ export const tours: Tour[] = [
     title: '2.5 Hour Tour in Ketchikan on the Tongass Trolley',
     description: 'Experience the magic of Ketchikan from the comfort of our vintage-style trolley. We drive through historic downtown, Creek Street, and natural scenic viewpoints on this comprehensive 2.5 hour expedition.',
     duration: '2.5 hours',
-    price: 49,
+    price: 85,
     featuredImage: 'https://images.unsplash.com/photo-1549420067-e6a88ab05cde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     highlights: [
       'Historic Downtown Ketchikan',
@@ -30,7 +30,7 @@ export const tours: Tour[] = [
     description: 'Venture beyond the city limits in our comfortable vans. Discover black bears, bald eagles, and the lush Tongass National Forest.',
     duration: '3.5 hours',
     price: 89,
-    featuredImage: 'https://images.unsplash.com/photo-1510271501579-373a4dff3124?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    featuredImage: '/van_tour.png',
     highlights: [
       'Tongass National Forest Exploration',
       'Herring Cove Wildlife Viewing',
