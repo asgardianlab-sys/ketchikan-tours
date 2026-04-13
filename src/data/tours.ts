@@ -7,7 +7,7 @@ export const tours: Tour[] = [
     description: 'Experience the magic of Ketchikan from the comfort of our vintage-style trolley. We drive through historic downtown, Creek Street, and natural scenic viewpoints on this comprehensive 2.5 hour expedition.',
     duration: '2.5 hours',
     price: 85,
-    featuredImage: 'https://images.unsplash.com/photo-1549420067-e6a88ab05cde?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    featuredImage: '/trolley_tour.png',
     highlights: [
       'Historic Downtown Ketchikan',
       'Creek Street & The Salmon Ladder',

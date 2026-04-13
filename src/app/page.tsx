@@ -4,10 +4,9 @@ import { tours } from '../data/tours';
 import { fleet } from '../data/fleet';
 import { faqs } from '../data/faq';
 import BookingButton from '../components/BookingButton';
-import ImageCarousel from '../components/ImageCarousel';
+import FleetCarousel from '../components/FleetCarousel';
 
 export default function Home() {
-  const fleetImages = fleet.map(f => f.imageUrl);
 
   return (
     <div className="bg-glacier">
@@ -19,7 +18,7 @@ export default function Home() {
             alt="Ketchikan Alaska Landscape" 
             fill 
             sizes="100vw"
-            className="object-cover"
+            className="object-cover blur-[2px] scale-[1.02]"
             priority
           />
         </div>
@@ -123,28 +122,7 @@ export default function Home() {
             <p className="text-glacier/80 max-w-2xl mx-auto">Ride in comfort and style. We maintain two gorgeous vintage trolleys and two modern exploration vans.</p>
           </div>
           
-          <div className="mb-12">
-            <ImageCarousel images={fleetImages} />
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mt-12">
-            {fleet.map((item) => (
-              <div key={item.id} className="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-golden/30 border-l-[6px] border-l-copper">
-                <h3 className="text-xl font-bold mb-2 text-golden">{item.name}</h3>
-                <div className="flex text-glacier text-sm mb-4">
-                  <span className="bg-black/40 px-2 py-1 rounded mr-2">Capacity: {item.capacity}</span>
-                  <span className="bg-black/40 px-2 py-1 rounded capitalize">{item.type}</span>
-                </div>
-                <ul className="text-glacier/90 space-y-1">
-                  {item.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                       <span className="text-copper font-bold">✓</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <FleetCarousel fleet={fleet} />
         </div>
       </section>
 
