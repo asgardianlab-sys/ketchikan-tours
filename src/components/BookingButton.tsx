@@ -10,7 +10,7 @@ declare global {
   }
 }
 
-export default function BookingButton({ text = "Book Now", shortname = "ketchikantours" }: { text?: string, shortname?: string }) {
+export default function BookingButton({ text = "Book Now", shortname = "ketchikanexpeditions" }: { text?: string, shortname?: string }) {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (window.FH && window.FH.open) {
@@ -21,7 +21,7 @@ export default function BookingButton({ text = "Book Now", shortname = "ketchika
       });
     } else {
       // Fallback in case script didn't load or mobile restriction
-      window.location.href = `https://fareharbor.com/embeds/book/${shortname}/`;
+      window.location.href = `https://fareharbor.com/embeds/book/${shortname}/items/`;
     }
   };
 
