@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ketchikan Expeditions | Best Ketchikan Tours",
   description: "We are a small, locally owned business that provides first class, private excursions in Southeast Alaska that are customized based on your own interests.",
+  icons: {
+    icon: '/logo-1x1.png',
+  },
 };
 
 export default function RootLayout({
