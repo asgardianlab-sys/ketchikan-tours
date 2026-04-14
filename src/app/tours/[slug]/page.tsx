@@ -4,8 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BookingButton from '@/components/BookingButton';
 
-// Crucial: throw 404 for any slug not strictly present in generateStaticParams
-export const dynamicParams = false;
+// Re-build all slugs at runtime if missing
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return tours.map((tour) => ({
@@ -35,7 +35,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-4xl mx-auto px-4 text-center mt-12 text-white">
             <h1 className="text-4xl md:text-6xl font-black mb-4 drop-shadow-md text-glacier">{tour.title}</h1>
-            <p className="text-xl md:text-2xl font-bold text-golden drop-shadow-sm">{tour.duration} | From ${tour.price.toFixed(2)} per adult</p>
+            <p className="text-xl md:text-2xl font-bold text-golden drop-shadow-sm">{tour.duration} | From ${tour.price.toFixed(2)} {tour.priceSuffix === 'total' ? '' : tour.priceSuffix}</p>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
             
             <div className="bg-glacier rounded-xl p-8 border border-golden/30 self-start sticky top-24 shadow-sm">
               <div className="text-center mb-6">
-                <span className="block text-raven/60 uppercase tracking-widest text-sm font-bold mb-1">Price per adult</span>
+                <span className="block text-raven/60 uppercase tracking-widest text-sm font-bold mb-1">Price {tour.priceSuffix === 'total' ? '' : ` ${tour.priceSuffix}`}</span>
                 <span className="text-5xl font-black text-raven">
                   <span className="text-2xl text-raven/60 mr-1">From</span>
                   ${tour.price.toFixed(2)}
@@ -117,7 +117,7 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
               </div>
 
               <div className="flex flex-col gap-4">
-                <BookingButton text="Book This Tour" />
+                <BookingButton text="Book This Tour" href={tour.bookingUrl} />
                 <Link href="/" className="text-center font-bold text-copper hover:text-cedar transition-colors mt-2">
                   ← Back to all tours
                 </Link>

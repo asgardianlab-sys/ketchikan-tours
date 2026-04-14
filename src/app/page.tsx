@@ -89,7 +89,7 @@ export default function Home() {
                 <div className="relative h-72">
                   <Image src={tour.featuredImage} alt={tour.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                   <div className="absolute top-4 right-4 bg-raven/90 backdrop-blur text-golden font-bold px-4 py-2 rounded-lg shadow-sm border border-golden/30">
-                    <span className="text-sm font-normal text-glacier pr-1">From</span>${tour.price.toFixed(2)} <span className="text-sm font-normal text-glacier">/ adult</span>
+                    <span className="text-sm font-normal text-glacier pr-1">From</span>${tour.price.toFixed(2)} <span className="text-sm font-normal text-glacier">{tour.priceSuffix === 'total' ? '' : `/ ${tour.priceSuffix}`}</span>
                   </div>
                 </div>
                 <div className="p-8 flex flex-col flex-grow">
@@ -104,7 +104,7 @@ export default function Home() {
                       View Details
                     </Link>
                     <div className="flex-1">
-                      <BookingButton text="Book" />
+                      <BookingButton text="Book" href={tour.bookingUrl} />
                     </div>
                   </div>
                 </div>

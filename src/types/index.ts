@@ -4,8 +4,10 @@ export interface Tour {
   description: string;
   duration: string;
   price: number;
+  priceSuffix?: string;
   featuredImage: string;
   highlights: string[];
+  bookingUrl: string;
   itinerary?: TourItineraryItem[];
 }
 

@@ -4,7 +4,7 @@ export const fleet: FleetItem[] = [
   {
     id: 'trolley-1',
     type: 'trolley',
-    name: 'The Misty Fjord Trolley',
+    name: 'The Tongass Trolley',
     capacity: 24,
     features: ['Panoramic Windows', 'Heated Cabin', 'Vintage Wooden Seating', 'PA System'],
     imageUrl: '/trolley_tour.png' 

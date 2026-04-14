@@ -1,36 +1,37 @@
 'use client';
 import React from 'react';
 
-// FareHarbor global type definition
+interface BookingButtonProps {
+  text?: string;
+  href?: string;
+}
+
 declare global {
   interface Window {
     FH?: {
-      open: (options: { shortname: string; fallback: string; fullItems: string }) => void;
+      open: (options: { src: string }) => void;
     };
   }
 }
 
-export default function BookingButton({ text = "Book Now", shortname = "ketchikanexpeditions" }: { text?: string, shortname?: string }) {
-  const handleClick = (e: React.MouseEvent) => {
-    e.preventDefault();
+export default function BookingButton({ 
+  text = "Book Now", 
+  href = "https://fareharbor.com/embeds/book/ketchikanexpeditions/items/?flow=343206" 
+}: BookingButtonProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (window.FH && window.FH.open) {
-      window.FH.open({
-        shortname: shortname,
-        fallback: 'simple',
-        fullItems: 'yes'
-      });
-    } else {
-      // Fallback in case script didn't load or mobile restriction
-      window.location.href = `https://fareharbor.com/embeds/book/${shortname}/items/`;
+      e.preventDefault();
+      window.FH.open({ src: href });
     }
   };
 
   return (
-    <button
+    <a
+      href={href}
       onClick={handleClick}
-      className="bg-copper hover:bg-copper/90 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1"
+      className="bg-copper hover:bg-copper/90 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 inline-block text-center w-full md:w-auto"
     >
       {text}
-    </button>
+    </a>
   );
 }
