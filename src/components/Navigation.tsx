@@ -1,17 +1,37 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Hide if scrolling down and past 100px. Show if scrolling up.
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="bg-glacier sticky top-0 z-50 border-b border-golden/20 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center relative z-20">
+    <header className={`bg-glacier sticky top-0 z-50 border-b border-golden/20 shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-4 flex justify-end md:justify-between items-center relative z-20">
         <Link 
           href="/" 
-          className={`flex items-center transition-all duration-300 ${isOpen ? 'blur-[2px] opacity-60' : ''}`} 
+          className={`absolute left-1/2 -translate-x-1/2 md:static md:transform-none flex items-center transition-all duration-300 ${isOpen ? 'blur-[2px] opacity-60' : ''}`} 
           onClick={() => setIsOpen(false)}
         >
           <Image 
