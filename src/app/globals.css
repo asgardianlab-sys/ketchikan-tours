@@ -10,12 +10,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  
-  --color-raven: #1A242B;
-  --color-copper: #B87333;
-  --color-glacier: #F2EBE1;
-  --color-cedar: #8B2E16;
-  --color-golden: #D4A056;
+  --font-serif: var(--font-playfair);
+
+  --color-obsidian: #0A0A0A;
+  --color-charcoal: #262626;
+  --color-graphite: #737373;
+  --color-silver: #E5E5E5;
+  --color-alabaster: #FAFAFA;
+  --color-pure: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -27,7 +27,7 @@ export default function Navigation() {
   }, [lastScrollY]);
 
   return (
-    <header className={`bg-glacier sticky top-0 z-50 border-b border-golden/20 shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+    <header className={`bg-black sticky top-0 z-50 border-b border-white/10 shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
       <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-4 flex justify-end md:justify-between items-center relative z-20">
         <Link 
           href="/" 
@@ -45,7 +45,7 @@ export default function Navigation() {
         </Link>
         <button 
           onClick={() => setIsOpen(!isOpen)} 
-          className="text-raven hover:text-copper focus:outline-none transition-colors"
+          className="text-white hover:text-gray-300 focus:outline-none transition-colors"
           aria-label="Toggle menu"
         >
           {isOpen ? (
@@ -63,39 +63,53 @@ export default function Navigation() {
       {isOpen && (
         <>
           <div 
-            className="fixed inset-0 bg-raven/20 backdrop-blur-sm -z-10" 
+            className="fixed inset-0 bg-obsidian/20 backdrop-blur-sm -z-10" 
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute top-full left-0 right-0 bg-glacier border-b border-golden/20 shadow-xl z-10 
-                          md:w-64 md:border md:border-t-0 md:rounded-bl-xl md:left-auto md:right-0">
+          <div className="absolute top-full left-0 right-0 bg-black border-b border-white/10 shadow-xl z-10 
+                          md:w-64 md:border-l md:border-b md:border-t-0 md:border-white/10 md:rounded-bl-xl md:left-auto md:right-0">
             <nav className="flex flex-col py-2">
               <Link 
                 href="/" 
-                className="px-6 py-4 text-raven font-bold hover:bg-raven/5 hover:text-copper transition-colors border-b border-golden/10 last:border-b-0"
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 href="/#tours" 
-                className="px-6 py-4 text-raven font-bold hover:bg-raven/5 hover:text-copper transition-colors border-b border-golden/10 last:border-b-0"
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
                 onClick={() => setIsOpen(false)}
               >
                 Tours
               </Link>
               <Link 
+                href="/gallery" 
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
+                onClick={() => setIsOpen(false)}
+              >
+                Gallery
+              </Link>
+              <Link 
                 href="/#about" 
-                className="px-6 py-4 text-raven font-bold hover:bg-raven/5 hover:text-copper transition-colors border-b border-golden/10 last:border-b-0"
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
                 onClick={() => setIsOpen(false)}
               >
                 About Us
               </Link>
               <Link 
                 href="/#faq" 
-                className="px-6 py-4 text-raven font-bold hover:bg-raven/5 hover:text-copper transition-colors border-b border-golden/10 last:border-b-0"
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
                 onClick={() => setIsOpen(false)}
               >
                 FAQ
+              </Link>
+              <Link 
+                href="/contact-us" 
+                className="px-6 py-4 text-white font-bold hover:bg-white/10 hover:text-gray-200 transition-colors border-b border-white/10 last:border-b-0"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact Us
               </Link>
             </nav>
           </div>

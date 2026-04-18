@@ -29,7 +29,7 @@ export default function BookingButton({
     <a
       href={href}
       onClick={handleClick}
-      className="bg-copper hover:bg-copper/90 text-white font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 inline-block text-center w-full md:w-auto"
+      className="bg-black text-white hover:bg-black/80 transition-colors font-bold py-3 px-8 rounded-lg transform hover:-translate-y-1 inline-block text-center w-full md:w-auto"
     >
       {text}
     </a>

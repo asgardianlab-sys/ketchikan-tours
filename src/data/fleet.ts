@@ -4,18 +4,18 @@ export const fleet: FleetItem[] = [
   {
     id: 'trolley-1',
     type: 'trolley',
-    name: 'The Tongass Trolley',
+    name: 'MS. BETTY',
     capacity: 24,
-    features: ['Panoramic Windows', 'Heated Cabin', 'Vintage Wooden Seating', 'PA System'],
+    features: ['Panoramic Windows', 'Heated Cabin', 'Cushioned Wooden Seats', 'PA System'],
     imageUrl: '/trolley_tour.png' 
   },
   {
     id: 'trolley-2',
     type: 'trolley',
-    name: 'The Totem Trolley',
+    name: 'MS. OLETA',
     capacity: 24,
-    features: ['Panoramic Windows', 'Heated Cabin', 'Classic Design', 'PA System'],
-    imageUrl: '/trolley_tour.png'
+    features: ['Open-Air Option on Nice Days', 'Heated Cabin', 'Cushioned Wooden Seats', 'PA System'],
+    imageUrl: '/Oleta.png'
   },
   {
     id: 'van-1',

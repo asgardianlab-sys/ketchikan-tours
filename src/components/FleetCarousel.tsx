@@ -91,25 +91,25 @@ export default function FleetCarousel({ fleet }: FleetCarouselProps) {
         )}
       </div>
 
-      <div className="bg-white/5 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-golden/30 border-l-[6px] border-l-copper shadow-xl transition-all duration-300">
+      <div className="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-xl transition-all duration-300">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
-          <h3 className="text-2xl md:text-3xl font-bold text-golden">{currentItem.name}</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-obsidian">{currentItem.name}</h3>
           <div className="flex gap-2">
-            <span className="bg-black/40 text-glacier px-3 py-1.5 text-sm font-bold rounded-lg border border-golden/20">
+            <span className="bg-gray-100 text-obsidian px-3 py-1.5 text-sm font-bold rounded-lg border border-gray-200">
               Capacity: {currentItem.capacity}
             </span>
-            <span className="bg-copper/20 text-copper px-3 py-1.5 text-sm font-bold rounded-lg capitalize border border-copper/30">
+            <span className="bg-gray-100 text-obsidian px-3 py-1.5 text-sm font-bold rounded-lg capitalize border border-gray-200">
               {currentItem.type}
             </span>
           </div>
         </div>
         
         <div>
-          <h4 className="text-sm uppercase tracking-widest text-glacier/60 font-bold mb-3">Vehicle Features</h4>
-          <ul className="grid sm:grid-cols-2 gap-3 text-white/90">
+          <h4 className="text-sm uppercase tracking-widest text-obsidian/60 font-bold mb-3">Vehicle Features</h4>
+          <ul className="grid sm:grid-cols-2 gap-3 text-obsidian/90">
             {currentItem.features.map((feature, i) => (
-              <li key={i} className="flex items-center gap-2 bg-black/20 px-4 py-2 rounded-lg border border-white/5">
-                <svg className="w-5 h-5 text-copper flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <li key={i} className="flex items-center gap-2 bg-gray-100 text-black px-4 py-2 rounded-lg border-none">
+                <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="font-medium">{feature}</span>

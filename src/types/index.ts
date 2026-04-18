@@ -9,6 +9,7 @@ export interface Tour {
   highlights: string[];
   bookingUrl: string;
   itinerary?: TourItineraryItem[];
+  interiorImages?: string[];
 }
 
 export interface TourItineraryItem {
