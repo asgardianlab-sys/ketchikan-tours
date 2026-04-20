@@ -71,6 +71,23 @@ export default function ReviewsCarousel() {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
 
+  // Autoplay functionality natively implemented
+  useEffect(() => {
+    if (!emblaApi) return;
+    const autoplay = setInterval(() => {
+      emblaApi.scrollNext();
+    }, 6000); // 6 seconds per slide
+
+    // Pause functionality if the user decides to manually interact
+    const onPointerDown = () => clearInterval(autoplay);
+    emblaApi.on('pointerDown', onPointerDown);
+
+    return () => {
+      clearInterval(autoplay);
+      emblaApi.off('pointerDown', onPointerDown);
+    };
+  }, [emblaApi]);
+
   return (
     <div className="relative">
       <div className="overflow-hidden px-1" ref={emblaRef}>

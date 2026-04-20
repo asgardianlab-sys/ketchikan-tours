@@ -4,27 +4,57 @@ import { useState } from 'react';
 import Image from 'next/image';
 
 const DEFAULT_IMAGES = [
-  '/hero_landscape.png',
-  '/trolley_tour.png',
-  '/van_tour.png',
-  '/Interiorvan.png',
-  '/Betty inside.png',
-  '/altviewvan.png',
-  '/luree.png',
-  '/tim.png'
+  '/gallery/bear catching sockeye.jpg',
+  '/gallery/vangrouplaughing.jpeg',
+  '/gallery/eagle2.jpg',
+  '/gallery/eagle3.jpg',
+  '/gallery/groupconnelllake.jpeg',
+  '/gallery/grouprainforest.jpeg',
+  '/gallery/timgrouprobkimwaterfall.jpeg',
+  '/gallery/baby bear.jpg',
+  '/gallery/bear in creek.jpg',
+  '/gallery/mother-with-cubs-crossing-street-RE-1200x799.jpg',
+  '/gallery/seal.jpg',
+  '/gallery/seals4.jpg',
+  '/gallery/just fishing.jpg',
+  '/gallery/herring cove.jpg',
+  '/gallery/American Legion.jpg',
+  '/gallery/Harley RIders memorial.jpg',
+  '/gallery/Harley riders kissing.jpg',
+  '/gallery/alaska-zodiac-tours-ketchikan-1.jpg',
+  '/gallery/ketchikan-expeditions.jpg',
+  '/gallery/ketchikan-expeditions (1).jpg',
+  '/gallery/caption.jpg',
+  '/gallery/caption (1).jpg',
+  '/gallery/d4fef143-4814-4193-a9da-a7908b1268fb~1.jpg',
+  '/gallery/39.jpg'
 ];
 
 export default function LightboxGallery({ images = DEFAULT_IMAGES }: { images?: string[] }) {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
-  const openLightbox = (imgUrl: string) => {
-    setSelectedImage(imgUrl);
+  const openLightbox = (index: number) => {
+    setSelectedIndex(index);
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
-    setSelectedImage(null);
+    setSelectedIndex(null);
     document.body.style.overflow = 'auto';
+  };
+
+  const showNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex + 1) % images.length);
+    }
+  };
+
+  const showPrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((selectedIndex - 1 + images.length) % images.length);
+    }
   };
 
   return (
@@ -34,7 +64,7 @@ export default function LightboxGallery({ images = DEFAULT_IMAGES }: { images?: 
           <div 
             key={idx} 
             className="break-inside-avoid relative rounded-xl overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-500 border border-silver/20"
-            onClick={() => openLightbox(img)}
+            onClick={() => openLightbox(idx)}
           >
             <div className="relative w-full" style={{ paddingBottom: `${(idx % 3 === 0 ? 120 : idx % 2 === 0 ? 80 : 100)}%` }}>
               <Image 
@@ -54,11 +84,10 @@ export default function LightboxGallery({ images = DEFAULT_IMAGES }: { images?: 
         ))}
       </div>
 
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div 
-          className="fixed inset-0 z-[100] bg-obsidian/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 opacity-0 animate-in fade-in duration-300"
+          className="fixed inset-0 z-[100] bg-obsidian/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12"
           onClick={closeLightbox}
-          style={{ animationFillMode: 'forwards' }}
         >
           <button 
             className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-50"
@@ -69,18 +98,40 @@ export default function LightboxGallery({ images = DEFAULT_IMAGES }: { images?: 
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+
+          {/* Previous Button */}
+          <button 
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-50 bg-black/20 hover:bg-black/50 rounded-full"
+            onClick={showPrev}
+            aria-label="Previous image"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next Button */}
+          <button 
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors p-4 z-50 bg-black/20 hover:bg-black/50 rounded-full"
+            onClick={showNext}
+            aria-label="Next image"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 md:h-12 md:w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
           
           <div 
-            className="relative w-full h-full max-w-7xl max-h-screen"
-            onClick={(e) => e.stopPropagation()}
+            className="relative w-full h-full max-w-7xl max-h-screen flex items-center justify-center pointer-events-none"
           >
             <Image 
-              src={selectedImage}
-              alt="Expanded gallery view"
+              src={images[selectedIndex]}
+              alt={`Expanded gallery view ${selectedIndex + 1}`}
               fill
-              className="object-contain"
+              className="object-contain pointer-events-auto"
               sizes="100vw"
               priority
+              onClick={(e) => e.stopPropagation()}
             />
           </div>
         </div>

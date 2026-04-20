@@ -26,6 +26,7 @@ export interface Location {
   description: string;
   isActive: boolean;
   address?: string;
+  googleMapsUrl?: string;
   mapEmbedUrl?: string;
 }
 

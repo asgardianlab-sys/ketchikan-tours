@@ -130,6 +130,18 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="reviews" className="py-20 bg-white border-b border-silver/20">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif font-medium text-obsidian mb-4">Guest Experiences</h2>
+            <p className="text-lg text-obsidian/70 max-w-2xl mx-auto">Don't just take our word for it. See what our guests are saying about their five-star Alaskan adventures.</p>
+          </div>
+          
+          <ReviewsCarousel />
+        </div>
+      </section>
+
       {/* Tours Section */}
       <section id="tours" className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4">
@@ -195,12 +207,12 @@ export default function Home() {
           {/* 6-Photo Rigid Asymmetrical Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
             {[
-              { src: '/hero_landscape.png', spanCS: 'col-span-2 row-span-2' },
-              { src: '/trolley_tour.png', spanCS: 'col-span-2 row-span-1' },
-              { src: '/Interiorvan.png', spanCS: 'col-span-1 row-span-1' },
-              { src: '/Betty inside.png', spanCS: 'col-span-1 row-span-1' },
-              { src: '/luree.png', spanCS: 'col-span-2 md:col-span-1 row-span-1' },
-              { src: '/tim.png', spanCS: 'col-span-2 md:col-span-3 row-span-1' },
+              { src: '/gallery/bear catching sockeye.jpg', spanCS: 'col-span-2 row-span-2' },
+              { src: '/gallery/vangrouplaughing.jpeg', spanCS: 'col-span-2 row-span-1' },
+              { src: '/gallery/mother-with-cubs-crossing-street-RE-1200x799.jpg', spanCS: 'col-span-1 row-span-1' },
+              { src: '/gallery/eagle2.jpg', spanCS: 'col-span-1 row-span-1' },
+              { src: '/gallery/groupconnelllake.jpeg', spanCS: 'col-span-2 md:col-span-1 row-span-1' },
+              { src: '/gallery/ketchikan-expeditions.jpg', spanCS: 'col-span-2 md:col-span-3 row-span-1' },
             ].map((img, idx) => (
               <Link href="/gallery" key={idx} className={`relative rounded-xl overflow-hidden group ${img.spanCS}`}>
                 <Image 
@@ -216,17 +228,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section id="reviews" className="py-20 bg-white border-b border-silver/20">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-medium text-obsidian mb-4">Guest Experiences</h2>
-            <p className="text-lg text-obsidian/70 max-w-2xl mx-auto">Don't just take our word for it. See what our guests are saying about their five-star Alaskan adventures.</p>
-          </div>
-          
-          <ReviewsCarousel />
-        </div>
-      </section>
 
       {/* FAQ Section */}
       <section id="faq" className="py-20 bg-alabaster">
