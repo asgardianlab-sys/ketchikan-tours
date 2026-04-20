@@ -1,4 +1,5 @@
 import BookingButton from '@/components/BookingButton';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Contact Us | Ketchikan Expeditions',
@@ -28,31 +29,7 @@ export default function ContactUs() {
               <p className="text-obsidian/70">Fill out the form below and our customer service team will respond within 24 hours.</p>
             </div>
             
-            <form action="https://formspree.io/f/mqewdabl" method="POST" className="max-w-2xl mx-auto space-y-8 pb-8">
-              <div className="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div className="relative group">
-                  <input type="text" id="name" name="name" className="peer w-full bg-transparent border-b border-silver/50 py-3 text-obsidian focus:outline-none focus:border-obsidian transition-colors placeholder-transparent" placeholder="Name" required />
-                  <label htmlFor="name" className="absolute left-0 -top-4 text-obsidian/50 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-obsidian font-medium cursor-text">Your Name</label>
-                </div>
-                <div className="relative group">
-                  <input type="email" id="email" name="email" className="peer w-full bg-transparent border-b border-silver/50 py-3 text-obsidian focus:outline-none focus:border-obsidian transition-colors placeholder-transparent" placeholder="Email" required />
-                  <label htmlFor="email" className="absolute left-0 -top-4 text-obsidian/50 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-4 peer-focus:text-xs peer-focus:text-obsidian font-medium cursor-text">Email Address</label>
-                </div>
-              </div>
-              <div className="relative group pt-4">
-                <input type="text" id="subject" name="subject" className="peer w-full bg-transparent border-b border-silver/50 py-3 text-obsidian focus:outline-none focus:border-obsidian transition-colors placeholder-transparent" placeholder="Subject" />
-                <label htmlFor="subject" className="absolute left-0 top-0 text-obsidian/50 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-7 peer-focus:top-0 peer-focus:text-xs peer-focus:text-obsidian font-medium cursor-text">Subject / Tour Interest</label>
-              </div>
-              <div className="relative group pt-6">
-                <textarea id="message" name="message" rows={4} className="peer w-full bg-transparent border-b border-silver/50 py-3 text-obsidian focus:outline-none focus:border-obsidian transition-colors placeholder-transparent resize-none" placeholder="Message" required></textarea>
-                <label htmlFor="message" className="absolute left-0 top-2 text-obsidian/50 text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-9 peer-focus:top-2 peer-focus:text-xs peer-focus:text-obsidian font-medium cursor-text">Your Message</label>
-              </div>
-              <div className="pt-8 flex justify-center">
-                <button type="submit" className="bg-obsidian text-white border border-obsidian hover:bg-transparent hover:text-obsidian transition-colors font-bold tracking-widest uppercase text-sm py-4 px-12 rounded-lg shadow-lg hover:shadow-none">
-                  Send Inquiry
-                </button>
-              </div>
-            </form>
+            <ContactForm />
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
