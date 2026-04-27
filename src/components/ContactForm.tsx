@@ -10,13 +10,19 @@ export default function ContactForm() {
     setStatus('submitting');
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    const payload = {
+      ...data,
+      project_id: "60e85f77-a861-4bbd-94cc-dd736ec99ade"
+    };
 
     try {
-      const res = await fetch("https://formspree.io/f/mqewdabl", {
+      const res = await fetch("https://contact-hub-plum.vercel.app/api/contact", {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(payload),
         headers: {
-          Accept: "application/json",
+          'Content-Type': 'application/json',
         },
       });
 

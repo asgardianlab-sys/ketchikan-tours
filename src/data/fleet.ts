@@ -23,7 +23,7 @@ export const fleet: FleetItem[] = [
     name: 'VIP Van',
     capacity: 9,
     features: ['High-Roof Design', 'Air Conditioning', 'Individual Captains Chairs', 'USB Charging Ports'],
-    imageUrl: '/van_tour.png'
+    imageUrl: '/altviewvan.png'
   },
   {
     id: 'van-2',
@@ -31,6 +31,6 @@ export const fleet: FleetItem[] = [
     name: 'The Beast',
     capacity: 14,
     features: ['High-Roof Design', 'Air Conditioning', 'Privacy Glass', 'Extra Legroom'],
-    imageUrl: '/van_tour.png'
+    imageUrl: '/the beast.jpeg'
   }
 ];

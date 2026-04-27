@@ -62,7 +62,7 @@ export const tours: Tour[] = [
     duration: '4 Hour Minimum',
     price: 1000,
     priceSuffix: 'per hour',
-    featuredImage: '/van_tour.png',
+    featuredImage: '/altviewvan.png',
     interiorImages: ['/Interiorvan.png', '/altviewvan.png'],
     bookingUrl: 'https://fareharbor.com/embeds/book/ketchikanexpeditions/items/209502/calendar',
     highlights: [
