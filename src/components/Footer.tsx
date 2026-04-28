@@ -52,7 +52,7 @@ export default function Footer() {
       </div>
       <div className="max-w-6xl mx-auto px-4 mt-12 pt-8 border-t border-alabaster/10 text-sm text-alabaster/50 flex flex-col md:flex-row justify-between items-center gap-4">
         <div>
-          &copy; 2026 Ketchikan Expeditions LLC. Designed by Asgardian Labs All rights reserved.
+          &copy; 2026 Ketchikan Expeditions LLC. All rights reserved. Designed by <a href="https://asgardsforge.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Asgardian Labs</a>.
         </div>
         <div className="flex gap-4">
           <span>AK Dept. of Commerce: 1955144</span>
