@@ -3,7 +3,7 @@ import { Location } from '../types';
 export const locations: Location[] = [
   {
     slug: 'downtown-ketchikan',
-    name: 'Ketchikan Berth 2 (Main Pickup)',
+    name: 'Ketchikan Visitors Bureau',
     description: 'Our primary meeting spot. We are located at Berth 2 right outside the Ketchikan Visitors Bureau. You will find us stationed directly next to "The Rock" statue and the famous Ketchikan sign.',
     isActive: true,
     address: 'Ketchikan Visitors Bureau (Berth 2), Ketchikan, AK 99901',

@@ -15,7 +15,7 @@ export const faqs: Faq[] = [
   },
   {
     question: 'Terms and Cancellation Policy',
-    answer: 'Our cancellation policy is as follows: Cancellations 14 days prior to your tour date are fully refundable, less a $25.00 processing or tour change fee. Cancellations with less than 14 days’ notice, or no shows, are non-refundable. Should Ketchikan Expeditions or one of our Partners need to cancel a trip due to poor weather conditions, or any other reason, your trip will be refunded in full. If your Cruise Ship doesn’t arrive in port due to weather, you will be fully refunded.'
+    answer: 'Our cancellation policy is as follows: Cancellations 7 days prior to your tour date are fully refundable, less a $25.00 processing or tour change fee. Cancellations with less than 7 days’ notice, or no shows, are non-refundable. Should Ketchikan Expeditions or one of our Partners need to cancel a trip due to poor weather conditions, or any other reason, your trip will be refunded in full. If your Cruise Ship doesn’t arrive in port due to weather, you will be fully refunded.'
   },
   {
     question: 'Privacy Policy',
@@ -23,7 +23,7 @@ export const faqs: Faq[] = [
   },
   {
     question: 'What if it Rains?',
-    answer: 'Our land tours go out rain or shine! When you grow up in a rainforest you learn to play in the rain. We will provide umbrellas and we have rain gear available, but rest assured our tour vans are warm, dry and comfortable. Flightseeing Tours done by Air or by Sea are dependent upon all conditions to ensure safety standards. Our Partners will cancel any tour deemed dangerous to passenger safety. If any tour is canceled due to weather restrictions, all fees will be refunded.'
+    answer: 'Our land tours go out rain or shine! When you grow up in a rainforest you learn to play in the rain. We do not provide umbrellas nor rain gear, but rest assured our tour vans are warm, dry and comfortable. Flightseeing Tours done by Air or by Sea are dependent upon all conditions to ensure safety standards. Our Partners will cancel any tour deemed dangerous to passenger safety. If any tour is canceled due to weather restrictions, all fees will be refunded.'
   },
   {
     question: 'Are we guaranteed to see wild animals?',
@@ -31,6 +31,6 @@ export const faqs: Faq[] = [
   },
   {
     question: 'We are traveling in a large Group, how many people can you accommodate?',
-    answer: 'We love group travelers and are able to accommodate up to 120 passengers. We just need to coordinate with your travel agent or party leader at least a week or two in advance in order for us to accommodate a group of that size. Please call us for assistance in planning your time in Ketchikan.'
+    answer: 'We love group travelers and are able to accommodate up to 90 passengers. We just need to coordinate with your travel agent or party leader at least a week or two in advance in order for us to accommodate a group of that size. Please call us for assistance in planning your time in Ketchikan.'
   }
 ];

@@ -63,14 +63,14 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Owners / Fearless Leaders */}
+        {/* Owners / Founders */}
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 lg:gap-20">
           {/* Luree */}
           <div className="flex flex-col">
             <div className="w-1/2 md:w-[50%] mx-auto aspect-[4/5] bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-gray-200 shadow-inner relative overflow-hidden group">
               <Image src="/luree.png" alt="Luree LeBrock" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
             </div>
-            <h3 className="text-3xl font-serif font-bold text-obsidian mb-6">Fearless Leader 1 - Luree LeBrock</h3>
+            <h3 className="text-3xl font-serif font-bold text-obsidian mb-6">Founder - Luree LeBrock</h3>
             <div className="space-y-4 text-obsidian/80 text-lg leading-relaxed">
               <blockquote className="italic border-l-4 border-graphite bg-alabaster p-6 rounded-r-xl mb-8 text-obsidian font-medium">
                 “Our motivation is to provide a unique experience rather than a standard excursion. We’re a small, family-owned business with a passion for what we do—and we have a lot of fun doing it.”
@@ -88,7 +88,7 @@ export default function Home() {
             <div className="w-1/2 md:w-[50%] mx-auto aspect-[4/5] bg-gray-100 rounded-2xl mb-8 flex items-center justify-center border border-gray-200 shadow-inner relative overflow-hidden group">
                <Image src="/tim.png" alt="Tim Cash" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
             </div>
-            <h3 className="text-3xl font-serif font-bold text-obsidian mb-6">Fearless Leader 2 - Tim Cash <span className="text-xl text-graphite font-normal inline-block align-middle ml-2">(AKA "Tour Daddy")</span></h3>
+            <h3 className="text-3xl font-serif font-bold text-obsidian mb-6">Co-Founder - Tim Cash</h3>
             <div className="space-y-4 text-obsidian/80 text-lg leading-relaxed">
               <blockquote className="italic border-l-4 border-graphite bg-alabaster p-6 rounded-r-xl mb-8 text-obsidian font-medium">
                 “If you’re not laughing, you’re not doing it right!”

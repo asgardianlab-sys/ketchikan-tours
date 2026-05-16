@@ -28,7 +28,7 @@ export default function Navigation() {
 
   return (
     <header className={`bg-black sticky top-0 z-50 border-b border-white/10 shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="max-w-6xl mx-auto px-4 md:px-8 lg:px-12 py-4 flex justify-end md:justify-between items-center relative z-20">
+      <div className="w-full px-4 md:px-8 lg:px-12 py-4 flex justify-end md:justify-between items-center relative z-20">
         <Link 
           href="/" 
           className={`absolute left-1/2 -translate-x-1/2 md:static md:transform-none flex items-center transition-all duration-300 ${isOpen ? 'blur-[2px] opacity-60' : ''}`} 
